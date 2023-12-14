@@ -559,9 +559,6 @@ async def on_message(message):
   #if isinstance(message.channel, discord.DMChannel):
   #await message.reply("Nice Try!")
 
-
-running = False
-
 #keep_alive()
 # Use your actual token here, and keep it secret!
 client.run(TOKEN)
