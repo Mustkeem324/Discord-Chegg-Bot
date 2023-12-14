@@ -4,4 +4,4 @@ boto3
 discord.py
 flask
 requests
-
+urllib3
