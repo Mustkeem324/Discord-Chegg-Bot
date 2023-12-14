@@ -19,11 +19,15 @@ client = discord.Client(intents=intents)
 running = False
 
 # Check if the guild is allowed
-allowed_channel_ids = [
-    1164624409068306493, 1062673831896027167, 1163164887090995363,
-    1150483600106590268
-]
+allowed_channel_ids = [1164624409068306493, 1062673831896027167, 1163164887090995363,1150483600106590268]
 
+@client.event
+async def on_ready():
+    global running
+    if not running:
+        running = True
+        print(f'Logged in as {client.user.name} ({client.user.id})')
+        print('------')
 
 def egg_scrap(url, identifier):
   try:
@@ -147,16 +151,6 @@ async def send_message_answer(message, url, url3, username):
   embed3.set_footer(text="Contact Owner for any issues")
   embed3.timestamp = datetime.datetime.utcnow()
   await message.author.send(embed=embed3)
-
-
-@client.event
-async def on_ready():
-    global running
-    if not running:
-        running = True
-        print(f'Logged in as {client.user.name} ({client.user.id})')
-        print('------')
-
 
 @client.event
 async def on_message(message):
