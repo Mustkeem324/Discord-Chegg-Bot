@@ -151,7 +151,11 @@ async def send_message_answer(message, url, url3, username):
 
 @client.event
 async def on_ready():
-  print(f'We have logged in as {client.user}')
+    global running
+    if not running:
+        running = True
+        print(f'Logged in as {client.user.name} ({client.user.id})')
+        print('------')
 
 
 @client.event
