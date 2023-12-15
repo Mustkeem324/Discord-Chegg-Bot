@@ -9,7 +9,7 @@ import requests
 import re
 import os
 from urllib.parse import urlparse
-#from webserver import keep_alive
+from webserver import keep_alive
 from dotenv import load_dotenv
 #TOKEN = 'MTE2NjA3OTk2NjY2NDk5NDg3Ng.GBKLJd.cT6zYQvHiFzstymvM52LYBQYY5348hzk4piMOU'
 load_dotenv()  # Load environment variables from a .env file
@@ -558,6 +558,6 @@ async def on_message(message):
   #if isinstance(message.channel, discord.DMChannel):
   #await message.reply("Nice Try!")
 
-#keep_alive()
+keep_alive()
 # Use your actual token here, and keep it secret!
 client.run(TOKEN)
