@@ -28,9 +28,11 @@ allowed_channel_ids = [1164624409068306493, 1062673831896027167, 116316488709099
 async def on_ready():
     global running
     if not running:
-        running = True
         print(f'Logged in as {client.user.name} ({client.user.id})')
         print('------')
+        running = True  # Set running to True to avoid triggering multiple times
+    else:
+        print("on_ready event triggered again, but running is already True")
 
 def egg_scrap(url, identifier):
   try:
