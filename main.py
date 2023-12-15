@@ -11,7 +11,6 @@ import os
 from urllib.parse import urlparse
 from webserver import keep_alive
 from dotenv import load_dotenv
-#TOKEN = 'MTE2NjA3OTk2NjY2NDk5NDg3Ng.GBKLJd.cT6zYQvHiFzstymvM52LYBQYY5348hzk4piMOU'
 load_dotenv()  # Load environment variables from a .env file
 
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -29,10 +28,11 @@ async def on_ready():
     global running
     if not running:
         print(f'Logged in as {client.user.name} ({client.user.id})')
-        print('------')
-        running = True  # Set running to True to avoid triggering multiple times
+        print(f'---------------------ONLINE-----------------------')
+        running = True # is check is not running for multiple times
     else:
         print("on_ready event triggered again, but running is already True")
+        print('-----------------------------------------------------------')
 
 def egg_scrap(url, identifier):
   try:
