@@ -10,8 +10,11 @@ import re
 import os
 from urllib.parse import urlparse
 #from webserver import keep_alive
+from dotenv import load_dotenv
+#TOKEN = 'MTE2NjA3OTk2NjY2NDk5NDg3Ng.GBKLJd.cT6zYQvHiFzstymvM52LYBQYY5348hzk4piMOU'
+load_dotenv()  # Load environment variables from a .env file
 
-TOKEN = 'MTE2NjA3OTk2NjY2NDk5NDg3Ng.GBKLJd.cT6zYQvHiFzstymvM52LYBQYY5348hzk4piMOU'
+TOKEN = os.getenv('DISCORD_TOKEN')
 
 intents = discord.Intents.all()  # Ensure the bot intents include messages
 
